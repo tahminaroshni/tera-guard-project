@@ -18,22 +18,22 @@
 
 <body>
   <!-- HEADER STARTS -->
-  <header class="header">
+  <header class="header" id="home">
     <!-- NAVBAR -->
-    <nav class="nav">
+    <nav class="nav ">
       <div class="logo">
         <img src="/img/logo.png" alt="">
       </div>
 
       <ul class="nav-links">
-        <li class="nav-link"><a class="nav-link-a" href="#">Home</a></li>
-        <li class="nav-link"><a class="nav-link-a" href="#">Features</a></li>
-        <li class="nav-link"><a class="nav-link-a" href="#">Operations</a></li>
-        <li class="nav-link"><a class="nav-link-a" href="#">Testimonials</a></li>
-        <li class="nav-link"><a class="nav-link-a btn get-now-btn" href="#">Get now</a></li>
+        <li class="nav-link"><a class="nav-link-a" href="#home">Home</a></li>
+        <li class="nav-link"><a class="nav-link-a" href="#section-features">Features</a></li>
+        <li class="nav-link"><a class="nav-link-a" href="#section-operations">Operations</a></li>
+        <li class="nav-link"><a class="nav-link-a" href="#section-testimonials">Testimonials</a></li>
+        <li class="nav-link"><a class="nav-link-a btn get-now-btn open-modal-btn" href="#">Get now</a></li>
       </ul>
 
-      <div class="nav-toggle hidden">
+      <div class="nav-toggle">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
           class="w-6 h-6">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25" />
@@ -63,7 +63,7 @@
 
     <!-- FEATURES -->
     <section class="section ">
-      <div class="section-features">
+      <div id="section-features">
         <div class="section-header">
           <h4 class="section-title">Features</h4>
           <h2 class="section-description">Everything you need in an anti-virus and more.</h2>
@@ -74,7 +74,7 @@
           <!-- ARTICLE--1 -->
           <div class="article article--1">
             <div class="article-left">
-              <img class="features-img" src="/img/secure-lazy.jpg" data-src="./img/secure.jpg" alt="">
+              <img class="features-img lazy-img" src="/img/secure-lazy.jpg" data-src="./img/secure.jpg" alt="">
             </div>
             <div class="article-right article-info">
               <div class="article-icon">
@@ -111,7 +111,7 @@
                 dicta, accusantium quisquam.</p>
             </div>
             <div class="article-right">
-              <img class="features-img" src="/img/powerful-lazy.jpg" data-src="./img/powerful.jpg" alt="">
+              <img class="features-img lazy-img" src="/img/powerful-lazy.jpg" data-src="./img/powerful.jpg" alt="">
             </div>
           </div>
 
@@ -119,7 +119,7 @@
           <!-- ARTICLE--3 -->
           <div class="article article--3">
             <div class="article-left">
-              <img class="features-img" src="/img/simple-lazy.jpg" data-src="./img/simple.jpg" alt="">
+              <img class="features-img lazy-img" src="/img/simple-lazy.jpg" data-src="./img/simple.jpg" alt="">
             </div>
             <div class="article-right article-info">
               <div class="article-icon">
@@ -142,22 +142,25 @@
 
     <!-- OPERATIONS -->
     <section class="section">
-      <div class="section-operations">
+      <div id="section-operations">
         <div class="section-header">
           <h4 class="section-title">Operations</h4>
           <h2 class="section-description">Everything as simple as possible, but no simpler.</h2>
         </div>
         <div class="toggle-operations">
-          <div class="toggle-btns">
-            <button class="toggle-btn toggle-btn-1 toggle-btn-active"><span class="toggle-number">01</span>Free
+          <div class="toggle-btns-container">
+            <button class="toggle-btn toggle-btn-1 toggle-btn-active" data-btn="1"><span
+                class="toggle-number">01</span>Free
               anti-virus</button>
-            <button class="toggle-btn toggle-btn-2"><span class="toggle-number">02</span>Free 30 days trial</button>
-            <button class="toggle-btn toggle-btn-3"><span class="toggle-number">03</span>Money back guarantee</button>
+            <button class="toggle-btn toggle-btn-2" data-btn="2"><span class="toggle-number">02</span>Free 30 days
+              trial</button>
+            <button class="toggle-btn toggle-btn-3" data-btn="3"><span class="toggle-number">03</span>Money back
+              guarantee</button>
           </div>
 
-          <div class="operations">
+          <div class="operations-container">
             <!-- OPERATION--1 -->
-            <div class="operation--1">
+            <div class="operation operation--1">
               <div class="operation-icon operation-icon-1">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
                   stroke="currentColor" className="w-6 h-6">
@@ -175,7 +178,7 @@
               </div>
             </div>
             <!-- OPERATION--2 -->
-            <div class="operation--2">
+            <div class="operation operation--2 hidden">
               <div class="operation-icon operation-icon-2">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
                   stroke="currentColor" className="w-6 h-6">
@@ -194,7 +197,7 @@
               </div>
             </div>
             <!-- OPERATION--3 -->
-            <div class="operation--3">
+            <div class="operation operation--3 hidden">
               <div class="operation-icon operation-icon-3">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
                   stroke="currentColor" className="w-6 h-6">
@@ -219,99 +222,101 @@
 
     <!-- TESTIMONIALS -->
     <section class="section">
-      <div class="section-testimonials">
+      <div id="section-testimonials">
         <div class="section-header">
           <h4 class="section-title">Testimonials</h4>
           <h2 class="section-description">Millions of Developer are already making their lifes simpler.</h2>
         </div>
 
         <div class="slider">
+          <div class="slider-btn">
+            <button class=" back-arrow">&larr;</button>
+          </div>
           <div class="slide">
-            <div class="slider-btn">
-              <button class="back-arrow">&larr;</button>
+            <div class="slider-content">
+              <!-- SLIDE--1 -->
+              <div class="slide-info slide--1">
+                <h3 class="testimonial-title">Best web security solution ever!</h3>
+                <blockquote class="testimonial-text">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Accusantium quas quisquam non? Quas voluptate nulla minima
+                  deleniti optio ullam nesciunt, numquam corporis et asperiores
+                  laboriosam sunt, praesentium suscipit blanditiis. Necessitatibus
+                  id alias reiciendis, perferendis facere pariatur dolore veniam
+                  autem esse non voluptatem saepe provident nihil molestiae.
+                </blockquote>
+                <address class="testimonial-author">
+                  <div class="author-photo">
+                    <img src="/img/user-1.jpg" alt="">
+                  </div>
+                  <div class="author-info">
+                    <p class="author-name">Sarah Parker</p>
+                    <p class="author-address">California, USA</p>
+                  </div>
+                </address>
+              </div>
+              <!-- SLIDE--2 -->
+              <div class="slide-info slide--2">
+                <h3 class="testimonial-title">The fastest malware and ransomware remover ever!</h3>
+                <blockquote class="testimonial-text">
+                  Quisquam itaque deserunt ullam, quia ea repellendus provident,
+                  ducimus neque ipsam modi voluptatibus doloremque, corrupti
+                  laborum. Incidunt numquam perferendis veritatis neque
+                  repellendus. Lorem, ipsum dolor sit amet consectetur adipisicing
+                  elit. Illo deserunt exercitationem deleniti.
+                </blockquote>
+                <address class="testimonial-author">
+                  <div class="author-photo">
+                    <img src="/img/user-2.jpg" alt="">
+                  </div>
+                  <div class="author-info">
+                    <p class="author-name">Miyah Miles</p>
+                    <p class="author-address">London, UK</p>
+                  </div>
+                </address>
+              </div>
+              <!-- SLIDE--3 -->
+              <div class="slide-info slide--3">
+                <h3 class="testimonial-title">Finally free from old-school anti-virus</h3>
+                <blockquote class="testimonial-text">
+                  Debitis, nihil sit minus suscipit magni aperiam vel tenetur
+                  incidunt commodi architecto numquam omnis nulla autem,
+                  necessitatibus blanditiis modi similique quidem. Odio aliquam
+                  culpa dicta beatae quod maiores ipsa minus consequatur error
+                  sunt, deleniti saepe aliquid quos inventore sequi.
+                  Necessitatibus id alias reiciendis, perferendis facere.
+                </blockquote>
+                <address class="testimonial-author">
+                  <div class="author-photo">
+                    <img src="/img/user-3.jpg" alt="">
+                  </div>
+                  <div class="author-info">
+                    <p class="author-name">Rebecca Tyre</p>
+                    <p class="author-address">Lisbon, Portugal</p>
+                  </div>
+                </address>
+              </div>
             </div>
-            <!-- SLIDE--1 -->
-            <div class="slider-content  slide--1">
-              <h3 class="testimonial-title">Best web security solution ever!</h3>
-              <blockquote class="testimonial-text">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Accusantium quas quisquam non? Quas voluptate nulla minima
-                deleniti optio ullam nesciunt, numquam corporis et asperiores
-                laboriosam sunt, praesentium suscipit blanditiis. Necessitatibus
-                id alias reiciendis, perferendis facere pariatur dolore veniam
-                autem esse non voluptatem saepe provident nihil molestiae.
-              </blockquote>
-              <address class="testimonial-author">
-                <div class="author-photo">
-                  <img src="/img/user-1.jpg" alt="">
-                </div>
-                <div class="author-info">
-                  <p class="author-name">Sarah Parker</p>
-                  <p class="author-address">California, USA</p>
-                </div>
-              </address>
+
+            <!-- DOTS -->
+            <div class="dots">
+
             </div>
-            <!-- SLIDE--2 -->
-            <div class="slider-content  slide--2">
-              <h3 class="testimonial-title">The fastest malware and ransomware remover ever!</h3>
-              <blockquote class="testimonial-text">
-                Quisquam itaque deserunt ullam, quia ea repellendus provident,
-                ducimus neque ipsam modi voluptatibus doloremque, corrupti
-                laborum. Incidunt numquam perferendis veritatis neque
-                repellendus. Lorem, ipsum dolor sit amet consectetur adipisicing
-                elit. Illo deserunt exercitationem deleniti.
-              </blockquote>
-              <address class="testimonial-author">
-                <div class="author-photo">
-                  <img src="/img/user-2.jpg" alt="">
-                </div>
-                <div class="author-info">
-                  <p class="author-name">Miyah Miles</p>
-                  <p class="author-address">London, UK</p>
-                </div>
-              </address>
-            </div>
-            <!-- SLIDE--3 -->
-            <div class="slider-content  slide--3">
-              <h3 class="testimonial-title">Finally free from old-school anti-virus</h3>
-              <blockquote class="testimonial-text">
-                Debitis, nihil sit minus suscipit magni aperiam vel tenetur
-                incidunt commodi architecto numquam omnis nulla autem,
-                necessitatibus blanditiis modi similique quidem. Odio aliquam
-                culpa dicta beatae quod maiores ipsa minus consequatur error
-                sunt, deleniti saepe aliquid quos inventore sequi.
-                Necessitatibus id alias reiciendis, perferendis facere.
-              </blockquote>
-              <address class="testimonial-author">
-                <div class="author-photo">
-                  <img src="/img/user-3.jpg" alt="">
-                </div>
-                <div class="author-info">
-                  <p class="author-name">Rebecca Tyre</p>
-                  <p class="author-address">Lisbon, Portugal</p>
-                </div>
-              </address>
-            </div>
-            <div class="slider-btn">
-              <button class="forward-arrow">&rarr;</button>
-            </div>
+          </div>
+          <!-- SLIDE BUTTON -->
+          <div class="slider-btn">
+            <button class=" forward-arrow">&rarr;</button>
           </div>
 
-          <!-- DOTS -->
-          <div class="dots">
-            <div class="dot dot-active"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-          </div>
         </div>
 
       </div>
     </section>
 
     <!-- CLAIM SECTION -->
-    <section class="section claim-section">
+    <section class="section" id="claim-section">
       <h2 class="claim-header">The best day to join Tera Guard was one year ago. The second best is today!</h2>
-      <button class="btn claim-btn">Claim your free account today</button>
+      <button class="btn claim-btn open-modal-btn">Claim your free account today</button>
     </section>
 
     <!-- FOOTER -->
